@@ -1,0 +1,1 @@
+GET http://inventory:8082/api/inventory?skuCode=iphone_15&quantity=10

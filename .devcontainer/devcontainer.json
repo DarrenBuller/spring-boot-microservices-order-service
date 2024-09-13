@@ -1,9 +1,14 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
-	"name": "Java",
+	"name": "OrderServiceJava",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+	"initializeCommand": "docker network inspect microservice_shared_network > /dev/null || docker network create microservice_shared_network --attachable",
+	"runArgs": [
+		"--network=microservice_shared_network",
+		"--hostname=order"
+	],
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "none",
@@ -37,7 +42,8 @@
 			"extensions": [
 				"vmware.vscode-boot-dev-pack",
 				"vscjava.vscode-java-pack",
-				"formulahendry.vscode-mysql"
+				"formulahendry.vscode-mysql",
+				"humao.rest-client"
 			]
 		}
 	}
