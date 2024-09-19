@@ -1,13 +1,13 @@
-package com.example.orderservice.service;
+package com.example.order.service;
 
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.example.orderservice.client.InventoryClient;
-import com.example.orderservice.dto.OrderRequest;
-import com.example.orderservice.model.Order;
-import com.example.orderservice.repository.OrderRepository;
+import com.example.order.client.InventoryClient;
+import com.example.order.dto.OrderRequest;
+import com.example.order.model.Order;
+import com.example.order.repository.OrderRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

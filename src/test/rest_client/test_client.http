@@ -1,4 +1,6 @@
-GET http://inventory:8082/api/inventory?skuCode=iphone_15&quantity=10
+@inventory_host=inventory:8082
+
+GET http://{{inventory_host}}/api/inventory?skuCode=iphone_15&quantity=10 HTTP/1.1
 
 ###
 POST http://order:8081/api/order HTTP/1.1

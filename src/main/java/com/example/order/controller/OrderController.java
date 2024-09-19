@@ -1,10 +1,11 @@
-package com.example.orderservice.controller;
+package com.example.order.controller;
 
-import com.example.orderservice.dto.OrderRequest;
-import com.example.orderservice.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import com.example.order.dto.OrderRequest;
+import com.example.order.service.OrderService;
 
 @RestController
 @RequestMapping("/api/order")
