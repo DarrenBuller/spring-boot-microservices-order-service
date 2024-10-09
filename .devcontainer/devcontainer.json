@@ -4,26 +4,16 @@
 	"name": "OrderServiceJava",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
-	"initializeCommand": "docker network inspect microservice_shared_network > /dev/null || docker network create microservice_shared_network --attachable",
-	"runArgs": [
-		"--network=microservice_shared_network",
-		"--hostname=order"
-	],
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"version": "none",
 			"installMaven": "true",
 			"installGradle": "false"
-		},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
-			"moby": true,
-			"azureDnsAutoDetection": true,
-			"installDockerBuildx": true,
-			"installDockerComposeSwitch": true,
-			"version": "latest",
-			"dockerDashComposeVersion": "latest"
 		}
 	},
+	"runArgs": [
+		"--network=host"
+	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
@@ -41,6 +31,7 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"vmware.vscode-boot-dev-pack",
+				"vmware.vscode-spring-boot",
 				"vscjava.vscode-java-pack",
 				"formulahendry.vscode-mysql",
 				"humao.rest-client"
