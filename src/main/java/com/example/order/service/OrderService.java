@@ -32,7 +32,9 @@ public class OrderService {
 
             // Send notification email
             OrderPlacedEvent orderPlacedEvent = new OrderPlacedEvent(order.getOrderNumber(),
-                    orderRequest.userDetails().email());
+                    orderRequest.userDetails().email(),
+                    orderRequest.userDetails().firstName(),
+                    orderRequest.userDetails().lastName());
             log.info("Start - Sending OrderPlacedEvent {} to Kafka topic order-placed", orderPlacedEvent);
             kafkaTemplate.send("order-placed", orderPlacedEvent);
             log.info("End - Sending OrderPlacedEvent {} to Kafka topic order-placed", orderPlacedEvent);
