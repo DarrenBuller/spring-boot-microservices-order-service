@@ -7,8 +7,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: mysql
     volumes:
-      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/order-mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./volume-data/order-mysql/data:/var/lib/mysql
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
     hostname: zookeeper
