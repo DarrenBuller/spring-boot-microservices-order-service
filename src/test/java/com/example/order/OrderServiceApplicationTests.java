@@ -8,14 +8,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
+import org.springframework.kafka.annotation.EnableKafka;
+import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.testcontainers.containers.MySQLContainer;
 
-import com.example.order.OrderServiceApplication;
 import com.example.order.stub.InventoryStubs;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
+@EnableKafka
 @SpringBootTest(classes = OrderServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@EmbeddedKafka(partitions = 1, brokerProperties = { "listeners=PLAINTEXT://localhost:9092", "port=9092" })
 @AutoConfigureWireMock(port = 0)
 class OrderServiceApplicationTests {
 
