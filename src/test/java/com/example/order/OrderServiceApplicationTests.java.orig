@@ -10,7 +10,10 @@ import org.springframework.boot.testcontainers.service.connection.ServiceConnect
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.testcontainers.containers.MySQLContainer;
 
+<<<<<<< HEAD
+=======
 import com.example.order.OrderServiceApplication;
+>>>>>>> 5ff3a24 (add missed file and renames)
 import com.example.order.stub.InventoryStubs;
 
 import static org.hamcrest.MatcherAssert.assertThat;
