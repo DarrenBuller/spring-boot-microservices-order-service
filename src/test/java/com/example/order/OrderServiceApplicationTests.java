@@ -1,4 +1,4 @@
-package com.example.orderservice;
+package com.example.order;
 
 import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
@@ -10,7 +10,7 @@ import org.springframework.boot.testcontainers.service.connection.ServiceConnect
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock;
 import org.testcontainers.containers.MySQLContainer;
 
-import com.example.orderservice.stub.InventoryStubs;
+import com.example.order.stub.InventoryStubs;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
