@@ -1,4 +1,4 @@
-package com.example.orderservice.stub;
+package com.example.order.stub;
 
 import lombok.experimental.UtilityClass;
 
